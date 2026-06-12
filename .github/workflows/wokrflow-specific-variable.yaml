@@ -11,9 +11,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      job_env: practice_job
     steps:
       - uses: actions/checkout@v4
       - name: This is testing for env
         run: |
           echo "This is ${{ env.env }}"
+          echo "This is ${{ env.job_env }}"
+          echo " thisi is ${{ env.step_env}}"
+          env: 
+            step_env: practice_step
+          
     

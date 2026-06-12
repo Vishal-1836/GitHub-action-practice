@@ -19,8 +19,8 @@ jobs:
         run: |
           echo "This is ${{ env.env }}"
           echo "This is ${{ env.job_env }}"
-          echo " thisi is ${{ env.step_env}}"
-          env: 
-            step_env: practice_step
+          echo " this is ${{ env.step_env }}"
+        env: 
+          step_env: practice_step
           
     

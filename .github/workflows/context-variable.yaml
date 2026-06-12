@@ -1,0 +1,21 @@
+name: context-variable
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: This is configuration variable
+      run: |
+        echo "This is configuration check workflow ${{ github.repository }}"
+        echo "This is configuration check workflow ${{ runner.os }}"
+        echo "This is configuration check workflow ${{ job.workflow_file_path }}"
+        echo "This is configuration check workflow ${{ github.actor}}"
+        echo "This is configuration check workflow ${{ runner.name }}"
+        echo "This is configuration check workflow ${{ job.workflow_repository }}"
+        

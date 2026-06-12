@@ -1,0 +1,24 @@
+name: input-number
+on:
+  # push:
+  #   branches: ["main"]
+  # pull_request: 
+  #   branches: ["main"]
+  workflow_dispatch:
+    inputs:
+      number1:
+        default: '0'
+        required: true
+      number2:
+        default: '1'
+        required: true
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v4
+    - name: This is input variable 
+      run: |
+        echo "This is ${{inputs.number1}} and ${{inputs.number2}}"
+  

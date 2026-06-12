@@ -15,5 +15,5 @@ jobs:
       - uses: actions/checkout@v4
       - name: This is testing for env
         run: |
-          echo "This is {{ $env.env }}"
+          echo "This is ${{ env.env }}"
     

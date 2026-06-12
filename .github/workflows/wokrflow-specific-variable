@@ -1,0 +1,19 @@
+name: env-Workflow-specific-environment
+var:
+  env: test
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: This is testing for env
+        run: |
+        echo "This is $env "
+    

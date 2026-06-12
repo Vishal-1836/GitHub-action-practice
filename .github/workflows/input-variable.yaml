@@ -7,16 +7,18 @@ on:
   workflow_dispatch:
     inputs:
       number1:
+        description: 'First number'
         default: '0'
         required: true
       number2:
+        description: 'second number'
         default: '1'
         required: true
   
 jobs:
   build:
     runs-on: ubuntu-latest
-  steps:
+    steps:
     - uses: actions/checkout@v4
     - name: This is input variable 
       run: |

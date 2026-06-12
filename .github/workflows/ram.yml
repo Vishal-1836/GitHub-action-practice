@@ -35,3 +35,6 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project,
           echo This is a practice github pipeline.
+      - name: Run the script
+        run: |
+            echo This is practice for wrting the task in the steps

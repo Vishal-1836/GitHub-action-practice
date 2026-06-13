@@ -42,7 +42,7 @@ jobs:
       - name: Artifact create 
         run: |
           echo "The artifact is generated" > artifact.txt
-          echo " The date is $(date) " > artifact.txt
+          echo " The date is $(date) " >> artifact.txt
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v7.0.1
         with:
@@ -52,6 +52,7 @@ jobs:
   Consumer-artifact-Job: 
     name: consume-artifact
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v7.0.0

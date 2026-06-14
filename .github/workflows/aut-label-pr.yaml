@@ -19,5 +19,5 @@ jobs:
         uses: actions/labeler@v6.1.0
         with:
           repo-token: ${{github.token}}
-          configuration path: .github/labeler.yml
+          configuration path: labeler.yml
 

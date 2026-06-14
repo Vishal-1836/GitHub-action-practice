@@ -1,0 +1,23 @@
+name: auto-label-pr
+on: 
+  pull_request:
+    types:
+      - opened
+      - ready_for_review
+permissions:
+  contents: read
+  pull-requests: write
+
+
+jobs:
+  label-pr:
+    name: Add label on changed files
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: add labeljob
+        uses: actions/labeler@v6.1.0
+        with:
+          repo-token: ${{github.token}}
+          configuration path: .github/labeler.yml
+

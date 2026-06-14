@@ -18,6 +18,6 @@ jobs:
       - name: add labeljob
         uses: actions/labeler@v6.1.0
         with:
-          repo-token: ${{github.token}}
-          configuration path: labeler.yml
+          repo-token: ${{secrets.GITHUB_TOKEN}}
+          configuration path: .github/labeler.yml
 

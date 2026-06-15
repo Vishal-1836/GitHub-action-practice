@@ -60,6 +60,11 @@ jobs:
         run: terraform init
       - name: List files
         run: ls -la 
+      - name: Manual Approval Check
+        run: |
+          echo "⏸️  Manual approval required before applying changes"
+          echo "Please review the terraform plan and approve the deployment in the GitHub UI"
+        shell: bash
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -input=false tfplan

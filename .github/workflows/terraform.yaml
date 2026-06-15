@@ -59,7 +59,7 @@ jobs:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v8.0.1
         with:
-          tfplan-artifact
+          name: tfplan-artifact
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Set up Terraform

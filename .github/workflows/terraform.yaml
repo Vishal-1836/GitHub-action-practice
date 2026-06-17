@@ -1,4 +1,4 @@
-name: Terraform deploy Log Analytics
+name: Test infra workflow
 permissions:
   id-token: write
   contents: read

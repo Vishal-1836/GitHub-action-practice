@@ -26,7 +26,7 @@ jobs:
       - name: Terraform Init
         run: terraform init
       - name: Terraform Plan
-        run: terraform plan -var-file=../../environment/test/test-ram-fianace.tfvars -out=tfplan
+        run: terraform plan -var-file=../../environment/test/test-ram-fianace.tfvars -out=tfplan -no-color=false
         env:
           TF_VAR_client_id: ${{ secrets.AZURE_CLIENT_ID }}
           TF_VAR_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }}
@@ -65,7 +65,7 @@ jobs:
         run: ls -la 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -var-file=../../tfvars/test/test.tfvars -input=false tfplan
+        run: terraform apply -var-file=../../environment/test/test-ram-fianace.tfvars -input=false tfplan
         env:
           TF_VAR_client_id: ${{ secrets.AZURE_CLIENT_ID }}
           TF_VAR_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }}

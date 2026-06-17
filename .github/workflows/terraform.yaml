@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v7.0.1
         with:
           name: tfplan-artifact
-          path: tfplan
+          path: -var-file=../../environment/test/test-ram-fianace.tfvars -out=tfplan 
 
   terraform-apply:
     runs-on: ubuntu-22.04

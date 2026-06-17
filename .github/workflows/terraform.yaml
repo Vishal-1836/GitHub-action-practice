@@ -55,6 +55,7 @@ jobs:
         uses: actions/download-artifact@v8.0.1
         with:
           name: tfplan-artifact-${{ github.run_id }}
+          path: project/ram-finance
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v2
         with:
@@ -63,6 +64,10 @@ jobs:
         run: terraform init
       - name: List files
         run: ls -la 
+      - name: Debug
+        run: |
+          pwd
+          ls -R
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -input=false tfplan

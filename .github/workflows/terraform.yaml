@@ -26,7 +26,7 @@ jobs:
       - name: Terraform Init
         run: terraform init
       - name: Terraform Plan
-        run: terraform plan -var-file=../../environment/test/test-ram-fianace.tfvars -out=tfplan -no-color=false
+        run: terraform plan -var-file=../../environment/test/test-ram-fianace.tfvars -out=tfplan 
         env:
           TF_VAR_client_id: ${{ secrets.AZURE_CLIENT_ID }}
           TF_VAR_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }}

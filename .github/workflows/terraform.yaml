@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v7.0.1
         with:
           name: tfplan-artifact-${{ github.run_id }}
-          path: tfplan 
+          path: project/ram-finance/tfplan 
 
   terraform-apply:
     runs-on: ubuntu-22.04

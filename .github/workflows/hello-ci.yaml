@@ -1,0 +1,17 @@
+name: hello-ci
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main"]
+  workflow_dispatch: 
+  
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.0
+      - name: This is task check value
+        run: |
+          echo "The event that trigger the worflow ${{ gitHub.event_name }}"

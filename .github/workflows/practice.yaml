@@ -20,6 +20,9 @@ jobs:
           echo "The workflow level varible : ${{env.APP_NAME}}"
           echo "The job level varible : ${{env.ENVIRONMENT}}"
           echo "The step level varible : ${{env.REGION}}"
-          
+          echo "The step level varible : ${{ github.repository }}"
+          echo "The step level varible :${{ github.workflow }}"
+          echo "The step level varible :${{ runner.os }}"
+          echo "The step level varible :${{ runner.arch }}"
         
     

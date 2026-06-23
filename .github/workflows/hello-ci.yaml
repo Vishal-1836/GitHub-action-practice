@@ -1,4 +1,4 @@
-name: hello-ci
+name: 1-hello-ci
 on:
   push:
     branches: [ "main" ]

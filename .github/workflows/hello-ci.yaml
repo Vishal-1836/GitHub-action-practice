@@ -15,3 +15,6 @@ jobs:
       - name: This is task check value
         run: |
           echo "The event that trigger the worflow ${{ gitHub.event_name }}"
+          echo "The branch name: ${{ github.ref_name }}"
+          echo "The commit SHA ${{ github.sha }}"
+          echo "The user who triggered the flow:  ${{ gitHub.actor }}"

@@ -1,1 +1,27 @@
-
+name: practice-problem-2
+env:
+  APP_NAME: ram-practice-project
+on:
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+jobs:
+  test:
+    env:
+      ENVIRONMENT: ram
+    runs-on:
+      - ubuntu-latest
+      - ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.0
+      - name: Environment variable level check
+        env:
+          REGION: centralindia 
+        run: |
+          echo "The workflow level varible : ${{env.APP_NAME}}"
+          echo "The job level varible : ${{env.ENVIRONMENT}}"
+          echo "The step level varible : ${{env.REGION}}"
+          
+        
+    

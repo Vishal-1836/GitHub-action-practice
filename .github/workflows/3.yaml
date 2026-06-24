@@ -17,6 +17,6 @@ jobs:
         run: |
           echo "The value of${{ secrets.DB_PASSWORD }}"
           echo "The value of ${{secrets.API_KEY }}"
-          echo "The value of $(secrets.AZURE_CLIENT_ID}}
+          echo "The value of $(secrets.AZURE_CLIENT_ID}}"
           echo "The value of ${{vars.DB_HOST}}"
           echo "The balue of ${{vars.DB_NAME}}"

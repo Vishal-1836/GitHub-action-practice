@@ -16,18 +16,23 @@ jobs:
     steps:
       - name: lint the code
         run: |
+          sleep 12
           echo "The code is being lint"
+          
+        
   test:
     runs-on:  ubuntu-slim
     steps:
       - name: The test Job
         run: |
+          sleep 12
           echo "The test job is running" 
   scan:
     runs-on: ubuntu-22.04-arm
     steps:
       - name: The scan Job
         run: |
+          sleep 12
           echo "The scanning is going on"
 
   build:
@@ -38,6 +43,7 @@ jobs:
     steps:
       - name: The above job depend on both above job
         run: |
+          sleep 12
           echo "The job is complete"
 
   deploy:
@@ -48,4 +54,5 @@ jobs:
     steps:
       - name: The above job depend on both above job
         run: |
+          sleep 12
           echo "The job is complete"

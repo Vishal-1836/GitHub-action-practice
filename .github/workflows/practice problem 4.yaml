@@ -49,7 +49,7 @@ jobs:
           echo "The job is complete"
 
   deploy:
-    if: github.ref == 'refs/head/main'
+    if: github.ref == 'refs/heads/main'
     needs:
       - build
     runs-on: ubuntu-22.04

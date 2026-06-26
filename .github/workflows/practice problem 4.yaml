@@ -2,17 +2,50 @@ name: Practice Problem 4
 on: 
   push:
     branches: ["main"]
-  pull_request:
-    branches: ["main"]
+  # pull_request:
+  #   branches: ["main"]
   workflow_dispatch:
 jobs:
-  buildapp:
-    runs-on: ubuntu-latest
+  # buildapp:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@4
+  lint:
+    runs-on: ubuntu-22.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@4
       - name: lint the code
         run: |
           echo "The code is being lint"
-      - name: 
-    
+  test:
+    runs-on:  ubuntu-slim
+    steps:
+      - name: The test Job
+        run: |
+          echo "The test job is running" 
+  scan:
+    runs-on: ubuntu-22.04-arm
+    steps:
+      - name: The scan Job
+        run: |
+          echo "The scanning is going on"
+
+  build:
+    needs:
+      - lint
+      - scan
+    runs-on: ubuntu-22.04
+    steps:
+      - name: The above job depend on both above job
+        run: |
+          echo "The job is complete"
+
+  deploy:
+    if: github.ref == 'refs/head/main'
+    needs:
+      - build
+    runs-on: ubuntu-22.04
+    steps:
+      - name: The above job depend on both above job
+        run: |
+          echo "The job is complete"

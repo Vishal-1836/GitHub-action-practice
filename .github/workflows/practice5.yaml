@@ -24,6 +24,7 @@ jobs:
         include:
           - os: ubuntu-latest
             Node: "21"
+            experiemental: true
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout

@@ -4,10 +4,11 @@ on:
     branches: ["main"]
   pull_request:
     branches: ["main"]
-
+  workflow_dispatch: 
 jobs:
   matrix_job:
     strategy:
+      fail-fast: true
       matrix:
         os:
           - ubuntu-latest

@@ -1,4 +1,4 @@
-name: Practice matrix
+name: Practice matrix 
 on:
   push:
     branches: ["main"]
@@ -26,7 +26,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
       - name: The Node version
         run: | 
           sleep 2

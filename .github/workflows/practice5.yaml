@@ -8,7 +8,7 @@ on:
 jobs:
   matrix_job:
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         os:
           - ubuntu-latest
@@ -29,6 +29,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: The Node version
+        continue-on-error: true
         run: | 
           sleep 2
           echo "The os and the node version combo is ${{ matrix.os }} and ${{ matrix.Node }}"

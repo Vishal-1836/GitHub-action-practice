@@ -26,14 +26,13 @@ jobs:
             Node: "21"
             experiemental: true
     runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.experiemental == true }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: The Node version
-        continue-on-error: true
         run: | 
           sleep 2
           echo "The os and the node version combo is ${{ matrix.os }} and ${{ matrix.Node }}"
-          
   
     

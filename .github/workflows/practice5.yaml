@@ -1,0 +1,36 @@
+name: Practice matrix
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  matrix_job:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+        Node:
+          - "18"
+          - "20"
+          - "22"
+        exclude:
+          - os: windows-latest
+            Node: "18"
+        include:
+          - os: ubuntu-latest
+            Node: "21"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@4
+      - name: The Node version
+        run: | 
+          sleep 2
+          echo "The os and the node version combo is ${{ matrix.os }} and ${{ matrix.Node }}"
+          
+  
+    
